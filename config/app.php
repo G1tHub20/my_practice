@@ -70,7 +70,7 @@ return [
     |
     */
 
-    // 'timezone' => 'UTC',
+    // 'timezone' => 'Asia/Tokyo',
     'timezone' => 'Asia/Tokyo', //初期設定
 
     /*
@@ -84,7 +84,7 @@ return [
     |
     */
 
-    // 'locale' => 'en',
+    // 'locale' => 'ja',
     'locale' => 'ja', //初期設定
 
     /*
@@ -111,7 +111,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'ja_JP',
 
     /*
     |--------------------------------------------------------------------------
