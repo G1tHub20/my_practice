@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// 1行ずつ
+// Route::get('tests/customer', [CustomerController::class, 'index']);
+
+// グループ化
+Route::prefix('contacts') //頭に「contacts」が付いたら
+    ->middleware(['auth']) //認証
+    ->controller(ContactFormController::class) //コントローラ指定
+    ->name('contacts.')
+    ->group(function() {
+        Route::get('/', 'index')->name('index'); //名前付きルート
+
+    }
+);
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
