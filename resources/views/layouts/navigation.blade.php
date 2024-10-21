@@ -10,10 +10,16 @@
                     </a>
                 </div>
 
-                <!-- Navigation Links -->
+                <!-- Navigation Links --> <!-- こっちも修正→Responsive Navigation Menu -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        Dashboard
+                    </x-nav-link>
+                    <x-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.index')">
+                        一覧
+                    </x-nav-link>
+                    <x-nav-link :href="route('contacts.create')" :active="request()->routeIs('contacts.create')">
+                        新規登録
                     </x-nav-link>
                 </div>
             </div>
@@ -68,7 +74,13 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                Dashboard
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contacts.index')" :active="request()->routeIs('contacts.index')">
+                問合せ一覧
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contacts.create')" :active="request()->routeIs('contacts.create')">
+                新規登録
             </x-responsive-nav-link>
         </div>
 

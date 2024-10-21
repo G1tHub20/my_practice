@@ -192,6 +192,7 @@ return [
         'birthday' => '誕生日',
         'body' => '本文',
         'city' => '市',
+        'contact' => 'お問い合わせ内容', //追加
         'content' => 'コンテンツ',
         'country' => '国',
         'created_at' => '作成日',
