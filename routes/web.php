@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\CSVController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -39,6 +40,15 @@ Route::prefix('contacts') //頭に「contacts」が付いたら
         Route::post('/{id}/destroy', 'destroy')->name('destroy');
     }
 );
+
+Route::get('myTest/csv', [CSVController::class, 'index']);
+Route::post('myTest/csv', [CSVController::class, 'uploadCsv'])->name('uploadCsv');
+
+
+
+
+
+
 
 
 Route::get('/dashboard', function () {

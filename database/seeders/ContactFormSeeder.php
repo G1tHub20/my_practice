@@ -24,7 +24,7 @@ class ContactFormSeeder extends Seeder
                 'gender' => 0,
                 'age' => 4,
                 'contact' => 'いてみると、そのすぐに立って行くの少し肩かたまを両方りょういたのだろうかんしつにあたしはよかったり笑わらい。',
-                'created_at' => new DateTime(), //現在日時
+                'created_at' => '2024-10-18 11:28:35', //固定の日時の場合
             ),
             1 => 
             array (
@@ -35,7 +35,7 @@ class ContactFormSeeder extends Seeder
                 'gender' => 0,
                 'age' => 5,
                 'contact' => 'けびました。みんなかったりしました。思わず叫さけん命めい勢いきはゆらゆるや雁がんで、あすこの上に飛とび出した。',
-                'created_at' => new DateTime(),
+                'created_at' => new DateTime(), //現在日時
             ),
             2 => 
             array (
