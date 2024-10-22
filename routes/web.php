@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\CSVController;
+use App\Http\Controllers\DompdfController;
+
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -38,14 +40,16 @@ Route::prefix('contacts') //頭に「contacts」が付いたら
         Route::get('/{id}/edit', 'edit')->name('edit');
         Route::post('/{id}', 'update')->name('update');
         Route::post('/{id}/destroy', 'destroy')->name('destroy');
+
     }
 );
 
-Route::get('myTest/csv', [CSVController::class, 'index']);
+
+
+Route::get('myTest/csv', [CSVController::class, 'index']); //CSV対応
 Route::post('myTest/csv', [CSVController::class, 'uploadCsv'])->name('uploadCsv');
 
-
-
+Route::get('myTest/{id}/pdf', [DompdfController::class, 'generatePDF'])->name('contacts.pdf'); //pdf対応
 
 
 

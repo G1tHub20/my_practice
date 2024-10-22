@@ -29,8 +29,6 @@ class CSVController extends Controller
         $newName = $directory . '/' . $baseName . $suffix . '.csv'; // 新規ファイル名
         $request->file('csv')->move($directory, $newName); //ファイルを保存（直接公開する場合）
 
-        // dd("ファイル保存" . $newName);
-
 
         /* Goodby CSVのconfig設定 */
         $config = new LexerConfig();
@@ -54,15 +52,13 @@ class CSVController extends Controller
         $tmpPath = $newName;
         $lexer->parse($tmpPath, $interpreter);
 
-        // 登録処理
+        /* DB登録処理 */
         $count = 0;
         foreach($dataList as $row) {
             ContactForm::insert(['name' => $row[0], 'title' => $row[1], 'email' => $row[2], 'url' => $row[3], 'gender' => $row[4], 'age' => $row[5], 'contact' => $row[6]]);
             $count++;
         }
 
-        // $message = '';
-        // $message = '登録完了しました';
         return redirect()->route('uploadCsv')->with('flash_message', '登録完了しました');
 
 

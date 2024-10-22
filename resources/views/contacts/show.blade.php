@@ -5,8 +5,12 @@
         </h2>
     </x-slot>
 
+    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <!-- PDF出力 -->
+            <a class="text-blue-500" href="{{ route('contacts.pdf', ['id' => $value->id]) }}">PDF出力</a>
+            
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <div class="lg:w-1/2 md:w-2/3 mx-auto">
